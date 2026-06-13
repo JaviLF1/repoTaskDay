@@ -3,8 +3,9 @@
 
 
 
-DayMonYear::DayMonYear(int daySet, int monthSet, int yearSet, std::string title, std::string description) {
-
+DayMonYear::DayMonYear(int daySet, int monthSet, int yearSet,
+    std::string title, std::string description)
+{
     day = daySet;
     month = monthSet;
     year = yearSet;
@@ -12,7 +13,9 @@ DayMonYear::DayMonYear(int daySet, int monthSet, int yearSet, std::string title,
     titleTask = title;
     descriptionTask = description;
 
-
+    if (!check()) {
+        throw std::runtime_error("Impossible date");
+    }
 }
 
 
